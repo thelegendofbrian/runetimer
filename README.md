@@ -9,6 +9,13 @@ Runetimer requires a server running PHP and a MySQL database. Place these files 
 Execute the following SQL on any MySQL database.
 
 ```sql
+CREATE USER runetimer@localhost IDENTIFIED BY 'YOURPASSWORD';
+GRANT delete,insert,select,update ON runetimer.timers,runetimer.languages TO runetimer@localhost;
+FLUSH PRIVILEGES;
+
+CREATE DATABASE runetimer;
+USE runetimer;
+
 CREATE TABLE IF NOT EXISTS `timers` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `ip` int(4) unsigned DEFAULT NULL,
