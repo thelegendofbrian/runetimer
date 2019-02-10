@@ -10,7 +10,7 @@ Execute the following SQL on any MySQL database.
 
 ```sql
 CREATE USER runetimer@localhost IDENTIFIED BY 'YOURPASSWORD';
-GRANT delete,insert,select,update ON runetimer.timers,runetimer.languages TO runetimer@localhost;
+GRANT delete,insert,select,update ON runetimer.* TO runetimer@localhost;
 FLUSH PRIVILEGES;
 
 CREATE DATABASE runetimer;
