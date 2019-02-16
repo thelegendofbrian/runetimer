@@ -27,9 +27,9 @@ function retrieveWorldPop($world) {
     $content = file_get_contents('http://oldschool.runescape.com/slu');
     
     if ($world < 300) {
-      preg_match('/<a id=\'slu-world-(?:[0-9]+\')(?:[^>]+)>Old School ' . $world . '<\/a>(?:[^0-9]+)([0-9]+) players<\/td>/', $content, $matches);
+      preg_match('/<a id=\'slu-world-(?:[0-9]+\')(?:[^>]+)>(?:Old School|OldSchool) ' . $world . '<\/a>(?:[^0-9]+)([0-9]+) players<\/td>/', $content, $matches);
     } else {
-      preg_match('/<a id=\'slu-world-(?:[0-9]+\')(?:[^>]+)>Old School ' . ($world - 300) . '<\/a>(?:[^0-9]+)([0-9]+) players<\/td>/', $content, $matches);
+      preg_match('/<a id=\'slu-world-(?:[0-9]+\')(?:[^>]+)>(?:Old School|OldSchool) ' . ($world - 300) . '<\/a>(?:[^0-9]+)([0-9]+) players<\/td>/', $content, $matches);
     }
     
     if (isset($matches[1])) {
